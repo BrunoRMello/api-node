@@ -17,7 +17,8 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 664697292925.dkr.ecr.us-east-1.amazonaws.com
-      - docker build -t api-node:latest -f "${DockerFilePath}" .
+      - echo era  pra dar o build...
+      - docker build -t api-node .
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 664697292925.dkr.ecr.us-east-1.amazonaws.com
       - docker tag api-node:latest 664697292925.dkr.ecr.us-east-1.amazonaws.com/api-node:latest
   post_build:
